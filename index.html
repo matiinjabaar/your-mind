@@ -321,6 +321,18 @@ html[lang="en"] .lead { line-height: 1.65; }
 .season-title { position: relative; font-size: clamp(2.1rem, 8.6vw, 4.2rem); text-wrap: balance; max-width: 16ch; }
 html[lang="en"] .season-title { max-width: 14ch; }
 .season-desc { position: relative; margin-top: 24px; max-width: 38ch; color: var(--gray); }
+.season-cta {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  min-height: 54px; margin-top: 32px; padding: 0 30px;
+  border: 1px solid var(--red); color: var(--fg);
+  font-size: .9rem; font-weight: 800; letter-spacing: calc(.22em * var(--ts)); text-transform: uppercase;
+  transition: background .35s;
+}
+.season-cta svg { width: 16px; height: 16px; color: var(--red); transition: transform .35s var(--ease), color .35s; }
+html[dir="rtl"] .season-cta svg { transform: scaleX(-1); }
+.season-cta:hover { background: var(--red); }
+.season-cta:hover svg { color: var(--fg); }
+.season-cta:active { transform: scale(.98); }
 .slots { position: relative; display: flex; gap: 6px; margin-top: clamp(36px, 7vw, 64px); }
 .slots li { flex: 1; height: 4px; background: rgba(var(--fg-rgb), .12); animation: slot 3.2s ease-in-out infinite; animation-delay: calc(var(--i) * .18s); }
 @keyframes slot { 0%, 100% { background: rgba(var(--fg-rgb), .12); } 50% { background: rgba(var(--red-rgb), .95); } }
@@ -538,6 +550,10 @@ html[dir="rtl"] .footer-credit { text-align: right; }
         </div>
         <h3 class="season-title display" id="s1-title" data-i18n="season.title">لا تثق بما تراه</h3>
         <p class="season-desc" data-i18n="season.desc">التجارب الأولى قيد التحضير.</p>
+        <a class="season-cta" href="episode-01.html">
+          <span data-i18n="season.cta">ابدأ الحلقة الأولى</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M2 8h11M8 3l5 5-5 5"/></svg>
+        </a>
         <ul class="slots" aria-hidden="true">
           <li style="--i:0"></li><li style="--i:1"></li><li style="--i:2"></li><li style="--i:3"></li><li style="--i:4"></li>
           <li style="--i:5"></li><li style="--i:6"></li><li style="--i:7"></li><li style="--i:8"></li><li style="--i:9"></li>
@@ -667,6 +683,7 @@ html[dir="rtl"] .footer-credit { text-align: right; }
       'season.status': 'قريباً',
       'season.title': 'لا تثق بما تراه',
       'season.desc': 'التجارب الأولى قيد التحضير.',
+      'season.cta': 'ابدأ الحلقة الأولى',
       'how.eyebrow': 'كيف يعمل',
       'how.title': 'شاهد. اختر. اكتشف.',
       'step1.title': 'شاهد',
@@ -717,6 +734,7 @@ html[dir="rtl"] .footer-credit { text-align: right; }
       'season.status': 'ل نێزیك',
       'season.title': 'باوەری ب وی نەکە یێ تو دبینی',
       'season.desc': 'ئەزمونێا ئێکێ ل ژێر دروستکرنێیە',
+      'season.cta': 'دەستپێکرنا بەشا ئێکێ', // REVIEW: Kurdish text written without a native reviewer
       'how.eyebrow': 'چاوا کار دکەت',
       'how.title': 'ببینە. هەلبژێرە. بدۆزە.',
       'step1.title': 'ببینە',
@@ -767,6 +785,7 @@ html[dir="rtl"] .footer-credit { text-align: right; }
       'season.status': 'COMING SOON',
       'season.title': 'DON’T TRUST WHAT YOU SEE',
       'season.desc': 'The first experiments are being prepared.',
+      'season.cta': 'START EPISODE 01',
       'how.eyebrow': 'HOW IT WORKS',
       'how.title': 'WATCH. CHOOSE. DISCOVER.',
       'step1.title': 'WATCH',
