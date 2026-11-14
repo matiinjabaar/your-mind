@@ -384,6 +384,11 @@ html[dir="rtl"] .footer-name { text-align: right; }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
   font-size: .85rem; color: var(--gray);
 }
+.footer-credit {
+  margin-top: 6px; direction: ltr; unicode-bidi: isolate; text-align: start;
+  font-family: var(--font-body); font-size: .8rem; letter-spacing: .04em; color: var(--gray);
+}
+html[dir="rtl"] .footer-credit { text-align: right; }
 .to-top { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: .8rem; font-weight: 700; letter-spacing: calc(.22em * var(--ts)); text-transform: uppercase; color: var(--fg); }
 .to-top svg { width: 14px; height: 14px; color: var(--red); }
 @media (min-width: 860px) {
@@ -613,7 +618,10 @@ html[dir="rtl"] .footer-name { text-align: right; }
     </nav>
   </div>
   <div class="wrap footer-bottom">
-    <p data-i18n="footer.rights">© {year} DON’T TRUST YOUR MIND. جميع الحقوق محفوظة.</p>
+    <div>
+      <p data-i18n="footer.rights">© {year} DON’T TRUST YOUR MIND. جميع الحقوق محفوظة.</p>
+      <p class="footer-credit" lang="en">Created by : matinmhe</p>
+    </div>
     <a class="to-top" href="#top">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><path d="M8 14V3M3 7l5-5 5 5"/></svg>
       <span data-i18n="footer.top">العودة للأعلى</span>
@@ -627,9 +635,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
 (function () {
   'use strict';
 
-  /* ===================================================================
-     TRANSLATION DICTIONARY — ar (Arabic), ku (Badini Kurdish), en (English)
-     =================================================================== */
   var I18N = {
     ar: {
       'meta.title': 'لا تثق بعقلك — DON’T TRUST YOUR MIND',
@@ -682,49 +687,49 @@ html[dir="rtl"] .footer-name { text-align: right; }
       'footer.top': 'العودة للأعلى'
     },
     ku: {
-      'meta.title': 'باوەری ب مێشکێ خۆ نەکە — DON’T TRUST YOUR MIND',
-      'meta.desc': 'پرۆژەیەکا دەروونی یا کارلێکەر یا تە دکەتە دوودل ل چەوانیا بیرکرن و بینین و بیرهاتنا تە.',
+      'meta.title': 'باوەر ژ مێشکێ خو نوکو — DON’T TRUST YOUR MIND',
+      'meta.desc': 'ئەڤ پروژە ڕێکا کارکرنا مێشکێ مروڤی ئاشکەرا دکەت، وچەوا کارتێکرنێ دکەتە سەر دیتن وبیردانك وبریارین مە ب سەردابرنا دەرونی',
       'skip': 'بازدە بۆ ناڤەڕۆکێ',
       'brand.aria': 'DON’T TRUST YOUR MIND — لاپەڕێ سەرەکی',
       'nav.aria': 'ڕێڤەبەرییا سەرەکی',
       'nav.about': 'دەربارەی پرۆژەی',
-      'nav.season': 'وەرزا یەکێ',
+      'nav.season': 'وەرزێ ئێکێ',
       'nav.how': 'چاوا کار دکەت',
-      'nav.soon': 'ب زوویی',
+      'nav.soon': 'ل نێزیك',
       'lang.group': 'زمان',
       'menu.open': 'لیستێ ڤەکە',
       'menu.close': 'لیستێ ڤەکە دا',
-      'hero.t1': 'تۆ باوەری',
-      'hero.t2': 'ب مێشکێ خۆ دکەی؟',
-      'hero.tagline': 'رەنگە مێشکێ تە وەکی تو بیر دکەی دگەل تە راستگۆ نەبیت.',
-      'hero.cta': 'راستیێ بدۆزە',
-      'hero.scroll': 'بۆ خوارێ بچە',
+      'hero.t1': 'تە باوەری',
+      'hero.t2': 'ب مێشکێ خو هەیە؟',
+      'hero.tagline': 'رەنگە مێشکێ تە وەکی تو هزر دکەی دگەل تە راستگۆ نەبیت',
+      'hero.cta': 'ڕاستیێ ئاشکەرا بکە',
+      'hero.scroll': 'بو خوارێ بکێشە',
       'about.eyebrow': 'دەربارەی پرۆژەی',
       'about.title': 'ئەڤ پرۆژە چیە؟',
-      'about.p1': 'ئەڤ پرۆژە دا چەوانیا کارکرنا مێشکێ مرۆڤی ڤەکۆلیت، و چەوان دیتن و بیرهاتن و بڕیارێن مە ب فێڵێن دەروونی و تێگەهشتنێ دهێنە شکلدان.',
-      'about.p2': 'ئەم نابێژینە تە تو چ بیر بکەی. ئەم تەنێ دهێلین تو ببینی مێشکێ تە چ دکەت.',
+      'about.p1': 'ئەڤ پروژە ڕێکا کارکرنا مێشکێ مروڤی ئاشکەرا دکەت، وچەوا کارتێکرنێ دکەتە سەر دیتن وبیردانك وبریارین مە ب سەردابرنا دەرونی',
+      'about.p2': 'ئەم نابێژینە تە تو چ هزر دکەی، دێ تەهێلین ببینی مێشکێ تە چ دکەت',
       'about.tag1': 'دیتن',
-      'about.tag2': 'بیرهاتن',
+      'about.tag2': 'بیردانك',
       'about.tag3': 'بڕیار',
-      'season.eyebrow': 'وەرزا یەکێ',
+      'season.eyebrow': 'وەرزێ ئێکێ',
       'season.heading': 'هەر وەرزەک ب دوودلییەکێ دەست پێ دکەت.',
-      'season.kicker': 'وەرزا یەکێ',
-      'season.status': 'ب زوویی',
+      'season.kicker': 'وەرزێ ئێکێ',
+      'season.status': 'ل نێزیك',
       'season.title': 'باوەری ب وی نەکە یێ تو دبینی',
-      'season.desc': 'ئەزموونێن یەکەم ل ئامادەکرنێ نە.',
+      'season.desc': 'ئەزمونێا ئێکێ ل ژێر دروستکرنێیە',
       'how.eyebrow': 'چاوا کار دکەت',
       'how.title': 'ببینە. هەلبژێرە. بدۆزە.',
       'step1.title': 'ببینە',
-      'step1.text': 'دیمەنەکێ کورت ل سەر ئێکرانا موبایلا خۆ تەماشە بکە.',
+      'step1.text': 'دیمەنەکێ کورت ل سەر شاشا موبایلا خۆ تەماشە بکە.',
       'step2.title': 'هەلبژێرە',
-      'step2.text': 'ئەوێ هەلبژێرە یێ تو دبێژی تە دیتی.',
+      'step2.text': 'ئەوێ هەلبژێرە یا هزر دکی تەدیت',
       'step3.title': 'بدۆزە',
-      'step3.text': 'بدۆزە چاوا مێشکێ تە تە فێڵ لێ کر.',
-      'soon.eyebrow': 'ب زوویی',
+      'step3.text': 'بدۆزە چاوا مێشکێ تە تە سەردا دبەت',
+      'soon.eyebrow': 'ل نێزیك',
       'soon.title': 'مێشکێ تە هێشتا هەمی نهێنیێن خۆ ئاشکەرا نەکرینە.',
-      'soon.text': 'تشتێن زێدەتر ل ئامادەکرنێ نە.',
+      'soon.text': 'تشتێن زێدەتر ل ژیر ئامادەکرنێ نە.',
       'soon.btn': 'تو ئامادەی؟',
-      'toast.soon': 'هێشتا ئامادە نینە. ب زوویی ڤەگەڕە.',
+      'toast.soon': 'هێشتا ئامادە نینە. ل نێزیك ڤەگەڕە.',
       'toast.lang': 'زمان هاتە گوهۆڕین بۆ بادینی',
       'footer.nav': 'ڕێڤەبەرییا ل خوارێ لاپەڕێ',
       'footer.desc': 'پرۆژەیەکا دەروونی یا کارلێکەر ل سەر چەوانیا دیتن و بیرهاتن و بڕیاردانا مێشکی.',
@@ -798,7 +803,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
 
   function curDict() { return I18N[I18N[root.lang] ? root.lang : 'ar']; }
 
-  /* ---------------- Toast ---------------- */
   function showToast(text) {
     toast.textContent = text;
     toast.classList.add('is-show');
@@ -806,7 +810,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     toastTimer = window.setTimeout(function () { toast.classList.remove('is-show'); }, 2600);
   }
 
-  /* ---------------- Language ---------------- */
   function applyLang(lang, persist, announce) {
     if (!I18N[lang]) { lang = 'ar'; }
     var dict = I18N[lang];
@@ -843,7 +846,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     });
   }
 
-  /* ---------------- Mobile menu ---------------- */
   function syncMenuLabel() {
     var dict = curDict();
     menuBtn.setAttribute('aria-label', menuOpen ? dict['menu.close'] : dict['menu.open']);
@@ -865,7 +867,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     if (menuOpen && window.innerWidth >= 900) { setMenu(false); }
   });
 
-  /* ---------------- In-page links ---------------- */
   document.addEventListener('click', function (e) {
     var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
     if (!link) { return; }
@@ -882,12 +883,10 @@ html[dir="rtl"] .footer-name { text-align: right; }
     if (menuOpen) { setMenu(false); window.setTimeout(go, 60); } else { go(); }
   });
 
-  /* ---------------- Coming soon button ---------------- */
   document.getElementById('soon-btn').addEventListener('click', function () {
     showToast(curDict()['toast.soon']);
   });
 
-  /* ---------------- Header on scroll ---------------- */
   var ticking = false;
   function onScroll() {
     if (ticking) { return; }
@@ -899,7 +898,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* ---------------- Observers ---------------- */
   var hasIO = 'IntersectionObserver' in window;
   var reveals = document.querySelectorAll('.reveal');
   if (hasIO) {
@@ -940,7 +938,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     heroIO.observe(document.getElementById('top'));
   }
 
-  /* ---------------- Hero eye ---------------- */
   var hero = document.getElementById('top');
   var pupil = document.getElementById('pupil');
   var eye = document.getElementById('eye');
@@ -980,7 +977,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     startLoop();
   }
 
-  /* ---------------- Season card light ---------------- */
   var card = document.getElementById('season-card');
   if (card && !reduceMotion) {
     var light = function (e) {
@@ -995,7 +991,6 @@ html[dir="rtl"] .footer-name { text-align: right; }
     card.addEventListener('pointercancel', function () { card.classList.remove('is-lit'); });
   }
 
-  /* ---------------- Init ---------------- */
   applyLang(I18N[root.lang] ? root.lang : 'ar', false, false);
   onScroll();
   window.requestAnimationFrame(function () {
